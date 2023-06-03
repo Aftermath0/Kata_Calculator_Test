@@ -18,9 +18,7 @@
                 }
                 case ("/") -> {
                     result = x / y;
-                    if(result<=0){ throw new ArithmeticException("Ошибка! В римской системе исчисления нет отрицательных чисел, дробных или нуля");}
-                    if (x % y != 0) {
-                        return  x % y;
+                    if(result<=0){ throw new ArithmeticException("Ошибка! В римской системе исчисления нет отрицательных чисел, дробных или нуля");
                     }
                     return  x / y;
                 }
@@ -30,7 +28,7 @@
             case ("-") -> x - y;
             case ("+") -> x + y;
             case ("*") -> x * y;
-            case ("/") -> x % y;
+            case ("/") -> x / y;
             default -> result;
         };
 
