@@ -18,14 +18,14 @@ public class Main {
             if(m.group(2).matches("[-+*/]")){
                 operator = m.group(2);
             } else throw new IOException("строка не является математической операцией данного калькулятора");
-            if((m.group(1).matches("[1-9]|10|") && m.group(3).matches("[1-9]|10|")) || (m.group(1).matches("[IVX]+") && m.group(3).matches("[IVX]+")) ){
-                if(m.group(1).matches("[IVX]+") && m.group(3).matches("[IVX]+")){
+            if((m.group(1).matches("[1-9]|10|") && m.group(3).matches("[1-9]|10|")) || (m.group(1).matches("IX|IV|V?I{0,3}") && m.group(3).matches("IX|IV|V?I{0,3}")) ){
+                if(m.group(1).matches("IX|IV|V?I{0,3}") && m.group(3).matches("IX|IV|V?I{0,3}")){
                     romanianDetector = true;
                 }
                 x = m.group(1);
                 y = m.group(3);
 
-            }else if((m.group(1).matches("[1-9]|10|") && m.group(3).matches("[IVX]+") ) || (m.group(1).matches("[IVX]+") && m.group(3).matches("[1-9]|10|"))){
+            }else if((m.group(1).matches("[1-9]|10|") && m.group(3).matches("IX|IV|V?I{0,3}") ) || (m.group(1).matches("IX|IV|V?I{0,3}") && m.group(3).matches("[1-9]|10|"))){
 
                 throw new IOException("Ошибка! Используются одновременно разные системы счисления");
 
